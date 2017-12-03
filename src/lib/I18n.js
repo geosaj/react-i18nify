@@ -1,5 +1,4 @@
-import moment from 'moment';
-import 'moment/min/locales';
+import fecha from 'fecha';
 import IntlPolyfill from 'intl';
 import formatMissingTranslation from './formatMissingTranslation';
 import BaseComponent from './Base';
@@ -110,12 +109,7 @@ export default {
 
   _localize(value, options = {}) {
     if (options.dateFormat) {
-      return moment(
-        value,
-        options.parseFormat,
-        this._locale,
-        Boolean(options.strictParse),
-      ).format(this.t(options.dateFormat));
+      return fecha.format(fecha.parse(value, options.parseFormat?options.parseFormat:'YYYY-MM-DD'), this.t(options.dateFormat));
     }
     if (typeof value === 'number') {
       if (global.Intl) {

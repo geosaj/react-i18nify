@@ -46,8 +46,8 @@
   ],
   "runkitExampleFilename": "example/example.js",
   "dependencies": {
+    "fecha": "^2.3.2",
     "intl": "^1.2",
-    "moment": "^2.18.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4"
   },
