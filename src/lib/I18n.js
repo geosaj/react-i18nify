@@ -109,7 +109,7 @@ export default {
 
   _localize(value, options = {}) {
     if (options.dateFormat) {
-      return fecha.format(fecha.parse(value, options.parseFormat?options.parseFormat:'YYYY-MM-DD'), this.t(options.dateFormat));
+      return fecha.format(fecha.parse(value, options.parseFormat ? options.parseFormat : 'YYYY-MM-DD'), this.t(options.dateFormat));
     }
     if (typeof value === 'number') {
       if (global.Intl) {
